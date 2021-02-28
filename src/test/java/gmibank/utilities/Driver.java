@@ -1,5 +1,6 @@
 package gmibank.utilities;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
@@ -145,6 +149,37 @@ public class Driver {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command, element);
     }
+
+
+    public static String Date(){
+
+        LocalDate date = LocalDate.now();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM");
+
+        String dateNow = dtf.format(date);
+
+        return dateNow;
+
+    }
+
+    public static String Time(){
+
+        LocalTime time = LocalTime.now();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
+
+        String timeNow = dtf.format(time);
+
+        return timeNow;
+    }
+
+
+
+
+
+
+
 
     public static void selectAnItemFromDropdown(WebElement item, String selectableItem){
         wait(5);
