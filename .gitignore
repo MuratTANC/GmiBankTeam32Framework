@@ -1,6 +1,15 @@
+
 /target/
 /.idea
 /*.iml
 /*.log
 /runners
 /configuration.properties
+
+
+
+/target/
+/.idea
+/*.iml
+/*.log
+/runners
