@@ -43,26 +43,26 @@ public class Us_001_Page {
     @FindBy(xpath = "//*[text()='Your mobile phone number is invalid']")
     public WebElement MobilephoneNumberMesage;
 
-    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5] ]")
+    @FindBy(xpath = "//*[text()='Your username is required.']")
     public WebElement usernameNameMesaji;
 
-    @FindBy(xpath = "(//div[@class='invalid-feedback'])[6] ")
-    public WebElement emailMesajıblank;
+    @FindBy(xpath = "//*[text()='Your email is required.']")
+    public WebElement emailMesageblank;
 
-    @FindBy(xpath = "//*[text()='Your mobile phone number is invalid']")
-    public WebElement emailnotenoughmesaj;
+    @FindBy(xpath = "//*[text()='This field is invalid']")
+    public WebElement emailnothave;
 
-    @FindBy(xpath = "(//div[@class='invalid-feedback'])[7] ")
-    public WebElement newpasswordmesajı1;
+    @FindBy(xpath = "//*[text()='Your email is required to be at least 5 characters.']")
+    public WebElement emailnotenough;
+
+    @FindBy(xpath = "//*[text()='Your password is required.']")
+    public WebElement newpasswordmesage1;
 
     @FindBy(xpath = "//*[text()='Your password is required to be at least 4 characters.']")
-    public WebElement newpasswordmesajınotenough;
+    public WebElement newpasswordmesagenotenough;
 
     @FindBy(xpath = "//*[text()='Your confirmation password is required.']")
-    public WebElement confirmationpasswordmesajı;
-
-    @FindBy(xpath = "div[class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
-    public WebElement kayitmesaji;
+    public WebElement confirmationpasswordmesage;
 
 
     public Us_001_Page() {

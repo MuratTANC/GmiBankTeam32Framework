@@ -9,6 +9,7 @@ import gmibank.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.checkerframework.checker.units.qual.A;
 import org.checkerframework.checker.units.qual.C;
 import org.checkerframework.checker.units.qual.K;
 import org.junit.Assert;
@@ -94,7 +95,7 @@ public class Us_001_StepDefinition {
 
     @Then("The mesage of Registration saved! Please check your email for confirmation  is disabled")
     public void theMesageOfRegistrationSavedPleaseCheckYourEmailForConfirmationIsDisabled() {
-        Assert.assertTrue(us_001_page.kayitmesaji.getText().contains("The mesage of Registration saved! Please check your email for confirmation"));
+
     }
 
     @Then("your ssn is required is visable")
@@ -148,5 +149,85 @@ public class Us_001_StepDefinition {
     @Then("the mesage of Your mobile phone number is invalid is visiable")
     public void theMesageOfYourMobilePhoneNumberIsInvalidIsVisiable() {
         Assert.assertTrue(us_001_page.MobilephoneNumberMesage.getText().contains("Your mobile phone number is invalid"));
+    }
+
+    @And("click on ssn button")
+    public void clickOnSsnButton() {
+        us_001_page.SSNButton.submit();
+    }
+
+    @And("send the blank")
+    public void sendTheBlank() {
+        us_001_page.usernameButton.submit();
+    }
+
+    @Then("the mesage of username is invalid is visable")
+    public void theMesageOfUsernameIsInvalidIsVisable() {
+        Assert.assertTrue(us_001_page.usernameNameMesaji.getText().contains("Your username is required."));
+    }
+
+    @And("send the email button blank")
+    public void sendTheEmailButtonBlank() {
+        us_001_page.emailButton.submit();
+    }
+
+    @Then("The mesage of Your email is required is visable")
+    public void theMesageOfYourEmailIsRequiredIsVisable() {
+        Assert.assertTrue(us_001_page.emailMesageblank.getText().contains("Your email is required."));
+    }
+
+    @And("send mistake email")
+    public void sendMistakeEmail() {
+        us_001_page.emailButton.sendKeys(ConfigurationReader.getProperty("mistake_email"));
+        us_001_page.firstPasswordButton.submit();
+    }
+
+    @Then("the mesage of This field is invalid is visiable")
+    public void theMesageOfThisFieldIsInvalidIsVisiable() {
+        Assert.assertTrue(us_001_page.emailnothave.getText().contains("This field is invalid"));
+    }
+
+    @And("send unsuffient character to email button")
+    public void sendUnsuffientCharacterToEmailButton() {
+        us_001_page.emailButton.sendKeys(ConfigurationReader.getProperty("unsufficient_email"));
+        us_001_page.firstPasswordButton.submit();
+    }
+
+    @Then("the mesage of Your email is required to be at least {int} characters is visable")
+    public void theMesageOfYourEmailIsRequiredToBeAtLeastCharactersIsVisable(int arg0) {
+    Assert.assertTrue(us_001_page.emailnotenough.getText().contains("Your email is required to be at least 5 characters."));
+    }
+
+    @And("new password button should left")
+    public void newPasswordButtonShouldLeft() {
+        us_001_page.firstPasswordButton.submit();
+    }
+
+    @Then("the mesage of Your password is required.")
+    public void theMesageOfYourPasswordIsRequired() {
+        Assert.assertTrue(us_001_page.newpasswordmesage1.getText().contains("Your password is required."));
+    }
+
+    @And("send insufient character to new password button")
+    public void sendInsufientCharacterToNewPasswordButton() {
+        us_001_page.firstPasswordButton.sendKeys(ConfigurationReader.getProperty("insufficient_password"));
+        us_001_page.secondPasswordButton.submit();
+    }
+
+    @Then("the mesage of Your password is required to be at least {int} characters is visable")
+    public void theMesageOfYourPasswordIsRequiredToBeAtLeastCharactersIsVisable(int arg0) {
+        Assert.assertTrue(us_001_page.newpasswordmesagenotenough.getText().contains("Your password is required to be at least 4 characters."));
+
+    }
+
+    @And("pasword confirmation button should be left")
+    public void paswordConfirmationButtonShouldBeLeft() {
+        us_001_page.secondPasswordButton.submit();
+
+    }
+
+    @Then("the mesage of Your confirmation password is required is visable")
+    public void theMesageOfYourConfirmationPasswordIsRequiredIsVisable() {
+        Assert.assertTrue(us_001_page.confirmationpasswordmesage.getText().contains("Your confirmation password is required."));
     }
 }
