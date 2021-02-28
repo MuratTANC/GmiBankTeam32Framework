@@ -22,8 +22,6 @@ Feature: US_002 Registration Page Negative Senerio
       Then the mesage of your last name is required
       Scenario: TC_007_mobilephonenumber is mistake
         And send mistake number format to mobilephonenumber
-
-
         Then the mesage of Your mobile phone number is invalid is visiable
 
 
