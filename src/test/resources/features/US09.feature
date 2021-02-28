@@ -1,6 +1,6 @@
 @US009TC01
 Feature: User can search for a new applicant by their SSN and see all their registration info populated US009
-  Scenario: User Information Ceheck Test
+  Scenario: User Information Check Test
     Given kullanici gmi bank sayfasina gider
     When signin alanina gider
     And Signin butonuna tiklar

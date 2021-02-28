@@ -43,10 +43,10 @@ public class SsnNumberPage {
     public WebElement searchButton;
 
     @FindBy(xpath = "//input[@name='firstName']")
-    public WebElement firstName;
+    public WebElement isim;
 
     @FindBy(xpath = "//input[@name='lastName']")
-    public WebElement lastName;
+    public WebElement soyisim;
 
     @FindBy(xpath = "//input[@name='email']")
     public WebElement email;
@@ -70,6 +70,60 @@ public class SsnNumberPage {
     public WebElement hatayazisicity ;
     @FindBy(xpath = "//input[@name='address']")
     public WebElement adress;
+    @FindBy(xpath = "//input[@name='city']")
+    public WebElement city;
+
+
+    @FindBy(xpath = "//a[@class='btn btn-success btn-sm'][1]")
+    public WebElement firstCustomer;
+
+    @FindBy(id = "firstName")
+    public WebElement firstName;
+
+    @FindBy(id = "lastName")
+    public WebElement lastName;
+
+    @FindBy(id = "middleInitial")
+    public WebElement middleInitial;
+
+    @FindBy(id = "email")
+    public WebElement e_mail;
+
+    @FindBy(id = "mobilePhoneNumber")
+    public WebElement mobilePhone;
+
+    @FindBy(id = "phoneNumber")
+    public WebElement phone;
+
+    @FindBy(id = "zipCode")
+    public WebElement zipCode;
+
+    @FindBy(id = "address")
+    public WebElement address;
+
+    @FindBy(id = "city")
+    public WebElement sity;
+
+    @FindBy(id = "ssn")
+    public WebElement ssnNumber;
+
+    @FindBy(id = "createDate")
+    public WebElement createDate;
+
+    @FindBy(id = "zelleEnrolled")
+    public WebElement zelle;
+
+    @FindBy(xpath = "//*[.='Country'][1]")
+    public WebElement ulke;
+
+    @FindBy(xpath = "//*[.='State'][1]")
+    public WebElement ikincistate;
+
+    @FindBy(xpath = "//*[.='User'][1]")
+    public WebElement userNo;
+
+    @FindBy(xpath = "//*[.='Account'][1]")
+    public WebElement account;
 
 
 

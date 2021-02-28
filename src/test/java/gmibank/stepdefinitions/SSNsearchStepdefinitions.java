@@ -12,12 +12,13 @@ import org.testng.asserts.SoftAssert;
 public class SSNsearchStepdefinitions {
 
     SsnNumberPage page = new SsnNumberPage();
-    SoftAssert softAssert= new SoftAssert();
+    SoftAssert softAssert = new SoftAssert();
 
     @Given("kullanici gmi bank sayfasina gider")
     public void kullanici_gmi_bank_sayfasina_gider() {
         Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
         softAssert.assertAll();
+
     }
 
     @When("signin alanina gider")
@@ -48,7 +49,6 @@ public class SSNsearchStepdefinitions {
     @When("My Operationsa tiklar")
     public void my_operationsa_tiklar() {
         page.myOperations.click();
-
     }
 
     @When("Manage customerse tiklar")
@@ -62,11 +62,10 @@ public class SSNsearchStepdefinitions {
         ReusableMethods.waitFor(3);
     }
 
-
     @When("Ssn bolumune tiklar ve  dogru ssn girer")
     public void ssn_bolumune_tiklar_ve_dogru_ssn_girer() {
-
         page.ssn.sendKeys(ConfigurationReader.getProperty("ssns"));
+        ReusableMethods.waitFor(2);
     }
 
     @When("search butonuna tiklar")
@@ -77,14 +76,15 @@ public class SSNsearchStepdefinitions {
     @When("firstname yazili oldugunu gorur")
     public void firstname_yazili_oldugunu_gorur() {
 
-        softAssert.assertTrue(page.firstName.isDisplayed());
+        softAssert.assertTrue(page.isim.isDisplayed());
         softAssert.assertAll();
     }
 
     @When("last name yazili oldugunu gorur")
     public void last_name_yazili_oldugunu_gorur() {
-        softAssert.assertTrue(page.lastName.isDisplayed());
-        softAssert.assertAll();
+
+            softAssert.assertTrue(page.soyisim.isDisplayed());
+            softAssert.assertAll();
     }
 
     @Then("Mail Adress yazili oldugunu gorur")
@@ -92,17 +92,5 @@ public class SSNsearchStepdefinitions {
         softAssert.assertTrue(page.email.isDisplayed());
         softAssert.assertAll();
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
