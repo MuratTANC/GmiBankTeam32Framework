@@ -29,11 +29,11 @@ public class US10ManageCustomerStepdefinitions {
       //  page.savebutton.click();
         ReusableMethods.waitFor(3);
     }
-
+git
     @Then("See This field is required.")
     public void see_this_field_is_required()
     {
-        page.city.click();
+
         Assert.assertTrue(page.hatayazisiadres.isDisplayed());
         ReusableMethods.waitFor(3);
         Assert.assertTrue(page.hatayazisicity.isDisplayed());
