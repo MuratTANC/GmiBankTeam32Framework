@@ -1,18 +1,13 @@
 package gmibank.stepdefinitions;
 
 import gmibank.utilities.ConfigurationReader;
-import gmibank.utilities.ReusableMethods;
 import io.cucumber.java.en.Given;
-
 import gmibank.pages.US_13Page;
-import io.cucumber.java.eo.Se;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
+import java.util.ArrayList;
 import java.util.List;
-
 
 public class US_13StepDefinitions {
 
@@ -57,7 +52,6 @@ public class US_13StepDefinitions {
     }
 
     //TC02
-
     @Given("Description text box tiklanir")
     public void descriptions_text_box_tiklanir() {
         us_13page.descriptionTextBox.click();
@@ -74,8 +68,7 @@ public class US_13StepDefinitions {
     }
 
 
-    //tc03
-
+    //TC03
     @Given("Save butonuna tiklar")
     public void save_butonuna_tiklar() {
         us_13page.saveButton.click();
@@ -87,75 +80,60 @@ public class US_13StepDefinitions {
 
     }
 
+    //TC04
     @Given("Account Type Drop Down  menusunden Account Typelari gorur")
     public void account_type_drop_down_menusunden_account_typelari_gorur() {
+        System.out.println("================ ACCOUNT TYPE TEST ================");
+        try {
 
         Select select = new Select(us_13page.accountTypeDropdown);
 
-        List<WebElement> accountTypeListe = select.getOptions();
+        List actualATDropdownValues = new ArrayList();
 
-        for (WebElement w : accountTypeListe) {
-            System.out.println(w.getText());
+        for (WebElement element: select.getOptions()){
+            actualATDropdownValues.add(element.getText());
         }
+        List expectedATDropdownValues = new ArrayList();
+        expectedATDropdownValues.add("CHECKING");
+        expectedATDropdownValues.add("SAVING");
+        expectedATDropdownValues.add("CREDIT_CARD");
+        expectedATDropdownValues.add("INVESTING");
 
-    /*
-    select.selectByIndex(0);
-    String birinciSecenek = select.getFirstSelectedOption().getText();
-    Assert.assertEquals(birinciSecenek, "CHECKING");
-    ReusableMethods.waitFor(3);
+        for (int i = 0; i < actualATDropdownValues.size(); i++) {
 
-    select.selectByIndex(1);
-    String ikinciSecenek = select.getFirstSelectedOption().getText();   //getFirstSelectedOption().getText();
-    Assert.assertEquals(ikinciSecenek, "SAVING");
-    ReusableMethods.waitFor(3);
-
-    /*
-    select.selectByIndex(2);
-    String ucuncuSecenek = select.getFirstSelectedOption().getText();
-    Assert.assertEquals(ikinciSecenek, "CREDIT_CARD");
-        ReusableMethods.waitFor(3);
-/*
-    select.selectByIndex(3);
-    String dorduncuSecenek = select.getFirstSelectedOption().getText();
-    Assert.assertEquals(ikinciSecenek, "INVESTING");
-        ReusableMethods.waitFor(3);
-
- */
-
+            System.out.println("Actual : " + actualATDropdownValues.get(i) + " & Expected : " + expectedATDropdownValues.get(i) );
+            Assert.assertTrue(actualATDropdownValues.get(i).equals(expectedATDropdownValues.get(i)));
+        }
+    } catch (Exception e){
+        e.printStackTrace();
+    }
     }
 
+    //TC05
     @Given("Account Status Type Drop Down menusunden Account Status Typelari gorur.")
     public void account_status_type_drop_down_menusunden_account_status_typelari_gorur() {
-        Select select = new Select(us_13page.accountStatusDropdown);
+        System.out.println("================ ACCOUNT STATUS TYPE TEST ================");
+        try {
 
-        List<WebElement> accountStatusTypeListe = select.getOptions();
+            Select select = new Select(us_13page.accountStatusDropdown);
 
-        for (WebElement w : accountStatusTypeListe) {
-            System.out.println(w.getText());
+            List actualASTDropdownValues = new ArrayList();
+
+            for (WebElement element: select.getOptions()){
+                actualASTDropdownValues.add(element.getText());
+            }
+            List expectedASTDropdownValues = new ArrayList();
+            expectedASTDropdownValues.add("ACTIVE");
+            expectedASTDropdownValues.add("SUESPENDED");
+            expectedASTDropdownValues.add("CLOSED");
+
+            for (int i = 0; i < actualASTDropdownValues.size(); i++) {
+
+                System.out.println("Actual : " + actualASTDropdownValues.get(i) + " & Expected : " + expectedASTDropdownValues.get(i) );
+                Assert.assertTrue(actualASTDropdownValues.get(i).equals(expectedASTDropdownValues.get(i)));
+            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
-
-
-
-/*
-    Select select = new Select(us_13page.accountStatusDropdown);
-    select.selectByIndex(0);
-    String birinciSecenek = select.getFirstSelectedOption().getText();
-    Assert.assertEquals(birinciSecenek, "ACTIVE");
-        ReusableMethods.waitFor(3);
-
-    select.selectByIndex(1);
-    String ikinciSecenek = select.getFirstSelectedOption().getText();
-    Assert.assertEquals(ikinciSecenek, "SUESPENDED");
-        ReusableMethods.waitFor(3);
-
-        select.selectByIndex(0);
-    String ucuncuSecenek = select.getFirstSelectedOption().getText();
-    Assert.assertEquals(ikinciSecenek, "CLOSED");
-        ReusableMethods.waitFor(3);
-
-
-    } */
-
     }
 }
-
