@@ -2,7 +2,7 @@ package gmibank.pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true)  //bulamazsa ignore et dedik
 public class Customer {
 
     private  int id;
