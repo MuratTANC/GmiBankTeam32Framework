@@ -130,8 +130,8 @@ public class US11StepDefinitions {
     public void seeAllTitles() {
 
         List<WebElement> allTitles = Driver.getDriver().findElements(By.xpath("//dd"));
-for (WebElement w: allTitles)
-    System.out.println(w.getText());
-        Assert.assertEquals(allTitles.size(),16);
+           for (WebElement w: allTitles)
+               System.out.println(w.getText());
+            Assert.assertEquals(allTitles.size(),16);
     }
 }

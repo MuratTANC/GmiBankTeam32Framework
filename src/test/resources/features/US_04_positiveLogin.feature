@@ -1,4 +1,4 @@
-
+@smoke
 Feature: US_04
   Background:
     When kullanici gmi_bank anasayfaya gider

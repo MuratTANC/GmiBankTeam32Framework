@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Accounts {
 
+
     private String accounts;
 
     public String getAccounts() {
@@ -14,4 +15,5 @@ public class Accounts {
     public void setAccounts(String accounts) {
         this.accounts = accounts;
     }
+
 }
