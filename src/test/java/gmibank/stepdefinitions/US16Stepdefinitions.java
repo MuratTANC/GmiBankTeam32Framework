@@ -18,7 +18,7 @@ public class US16Stepdefinitions {
 
     @Given("kullanici gmi bank internet sayfasina gider")
     public void kullanici_gmi_bank_internet_sayfasina_gider() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("gmi_url"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("gmibank_url"));
     }
 
     @Given("drop down menu tiklanir")
