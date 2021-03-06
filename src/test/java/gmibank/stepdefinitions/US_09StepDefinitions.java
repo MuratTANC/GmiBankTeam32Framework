@@ -9,7 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.asserts.SoftAssert;
 
-public class SSNsearchStepdefinitions {
+public class US_09StepDefinitions {
 
     SsnNumberPage page = new SsnNumberPage();
     SoftAssert softAssert = new SoftAssert();
@@ -83,8 +83,8 @@ public class SSNsearchStepdefinitions {
     @When("last name yazili oldugunu gorur")
     public void last_name_yazili_oldugunu_gorur() {
 
-            softAssert.assertTrue(page.soyisim.isDisplayed());
-            softAssert.assertAll();
+        softAssert.assertTrue(page.soyisim.isDisplayed());
+        softAssert.assertAll();
     }
 
     @Then("Mail Adress yazili oldugunu gorur")
@@ -93,4 +93,10 @@ public class SSNsearchStepdefinitions {
         softAssert.assertAll();
     }
 
+    @When("signout click edilir")
+    public void signout_click_edilir() {
+
+
+        page.signOutButton.click();
+    }
 }

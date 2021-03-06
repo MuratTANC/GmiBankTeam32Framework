@@ -124,6 +124,24 @@ public class SsnNumberPage {
 
     @FindBy(xpath = "//*[.='Account'][1]")
     public WebElement account;
+    @FindBy(xpath = "//*[text()='Sign out']")
+    public WebElement signOutButton;
+
+
+    @FindBy(id = "tp-account-description")
+    public WebElement descriptionTextbox;
+
+    @FindBy(name = "balance")
+    public WebElement balanceTextbox;
+
+    @FindBy(id = "tp-account-accountType")
+    public WebElement accountTypeDropdown;
+
+    @FindBy(name = "accountStatusType")
+    public WebElement accountStatusTypeDropdown;
+
+    @FindBy(id = "save-entity")
+    public WebElement save;
 
 
 
