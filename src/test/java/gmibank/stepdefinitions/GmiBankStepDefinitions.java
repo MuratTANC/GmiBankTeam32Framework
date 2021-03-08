@@ -1,7 +1,7 @@
 package gmibank.stepdefinitions;
 
 
-public class GmiBankStepDefinitions {
+public class GmiBankStepDefinitions {git
 
 
 
