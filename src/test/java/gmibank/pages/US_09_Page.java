@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SsnNumberPage {
+public class US_09_Page {
 
-    public SsnNumberPage(){
+    public US_09_Page(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

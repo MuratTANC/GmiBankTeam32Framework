@@ -1,6 +1,6 @@
 package gmibank.stepdefinitions;
 
-import gmibank.pages.SsnNumberPage;
+import gmibank.pages.US_09_Page;
 import gmibank.utilities.ConfigurationReader;
 import gmibank.utilities.Driver;
 import gmibank.utilities.ReusableMethods;
@@ -10,11 +10,11 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 
-public class US10_StepDefinitions {
+public class US_10_StepDefinitions {
 
 
 
-    SsnNumberPage page= new SsnNumberPage();
+    US_09_Page page= new US_09_Page();
 
 
 

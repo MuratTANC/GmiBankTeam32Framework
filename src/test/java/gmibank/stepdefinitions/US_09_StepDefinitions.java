@@ -1,6 +1,6 @@
 package gmibank.stepdefinitions;
 
-import gmibank.pages.SsnNumberPage;
+import gmibank.pages.US_09_Page;
 import gmibank.utilities.ConfigurationReader;
 import gmibank.utilities.Driver;
 import gmibank.utilities.ReusableMethods;
@@ -9,9 +9,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.asserts.SoftAssert;
 
-public class US_09StepDefinitions {
+public class US_09_StepDefinitions {
 
-    SsnNumberPage page = new SsnNumberPage();
+    US_09_Page page = new US_09_Page();
     SoftAssert softAssert = new SoftAssert();
 
     @Given("kullanici gmi bank sayfasina gider")

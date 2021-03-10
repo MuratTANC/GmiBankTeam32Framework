@@ -1,20 +1,19 @@
 package gmibank.stepdefinitions;
 
-import gmibank.pages.SsnNumberPage;
+import gmibank.pages.US_09_Page;
 import gmibank.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class US11StepDefinitions {
+public class US_11_StepDefinitions {
 
 
-    SsnNumberPage page= new SsnNumberPage();
+    US_09_Page page= new US_09_Page();
     @And("Click First ID")
     public void clickFirstID() {
 
