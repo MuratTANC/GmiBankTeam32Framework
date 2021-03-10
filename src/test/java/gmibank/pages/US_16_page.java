@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MoneyPage {
+public class US_16_page {
 
 
-    public MoneyPage(){
+    public US_16_page(){
 
         PageFactory.initElements(Driver.getDriver(),this);
     }

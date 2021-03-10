@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class US10ManagecustomerPage {
+public class US_10_Page {
 
-    public  US10ManagecustomerPage(){
+    public US_10_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

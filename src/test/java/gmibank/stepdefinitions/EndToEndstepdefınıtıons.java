@@ -1,13 +1,13 @@
 package gmibank.stepdefinitions;
 
-import gmibank.pages.SsnNumberPage;
+import gmibank.pages.US_09_Page;
 import gmibank.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.support.ui.Select;
 
 public class EndToEndstepdefınıtıons {
-SsnNumberPage page= new SsnNumberPage();
+US_09_Page page= new US_09_Page();
 
     @Given("kullanıcı account type secer")
     public void kullanıcı_account_type_secer() {

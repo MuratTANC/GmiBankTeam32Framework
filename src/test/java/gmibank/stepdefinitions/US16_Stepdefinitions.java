@@ -1,7 +1,7 @@
 package gmibank.stepdefinitions;
 
-import gmibank.pages.MoneyPage;
-import gmibank.pages.SsnNumberPage;
+import gmibank.pages.US_16_page;
+import gmibank.pages.US_09_Page;
 import gmibank.utilities.ConfigurationReader;
 import gmibank.utilities.Driver;
 import gmibank.utilities.ReusableMethods;
@@ -13,8 +13,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class US16_Stepdefinitions {
 
-    SsnNumberPage page= new SsnNumberPage();
-    MoneyPage moneyPage= new MoneyPage();
+    US_09_Page page= new US_09_Page();
+    US_16_page moneyPage= new US_16_page();
 
     @Given("kullanici gmi bank internet sayfasina gider")
     public void kullanici_gmi_bank_internet_sayfasina_gider() {

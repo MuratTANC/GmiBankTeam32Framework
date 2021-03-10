@@ -1,6 +1,6 @@
 package gmibank.stepdefinitions;
 
-import gmibank.pages.SsnNumberPage;
+import gmibank.pages.US_09_Page;
 import gmibank.utilities.ConfigurationReader;
 import gmibank.utilities.Driver;
 import gmibank.utilities.ReusableMethods;
@@ -14,7 +14,7 @@ public class US10_StepDefinitions {
 
 
 
-    SsnNumberPage page= new SsnNumberPage();
+    US_09_Page page= new US_09_Page();
 
 
 
