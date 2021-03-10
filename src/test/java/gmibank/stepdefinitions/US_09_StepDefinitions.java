@@ -1,6 +1,6 @@
 package gmibank.stepdefinitions;
 
-import gmibank.pages.SsnNumberPage;
+import gmibank.pages.US_09_Page;
 import gmibank.utilities.ConfigurationReader;
 import gmibank.utilities.Driver;
 import gmibank.utilities.ReusableMethods;
@@ -9,9 +9,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.asserts.SoftAssert;
 
-public class SSNsearchStepdefinitions {
+public class US_09_StepDefinitions {
 
-    SsnNumberPage page = new SsnNumberPage();
+    US_09_Page page = new US_09_Page();
     SoftAssert softAssert = new SoftAssert();
 
     @Given("kullanici gmi bank sayfasina gider")
@@ -83,8 +83,8 @@ public class SSNsearchStepdefinitions {
     @When("last name yazili oldugunu gorur")
     public void last_name_yazili_oldugunu_gorur() {
 
-            softAssert.assertTrue(page.soyisim.isDisplayed());
-            softAssert.assertAll();
+        softAssert.assertTrue(page.soyisim.isDisplayed());
+        softAssert.assertAll();
     }
 
     @Then("Mail Adress yazili oldugunu gorur")
@@ -93,4 +93,10 @@ public class SSNsearchStepdefinitions {
         softAssert.assertAll();
     }
 
+    @When("signout click edilir")
+    public void signout_click_edilir() {
+
+
+        page.signOutButton.click();
+    }
 }

@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class US_04StepDefintions {
+public class US_04_StepDefintions {
 
     US_04Pages us04Pages=new US_04Pages();
 
