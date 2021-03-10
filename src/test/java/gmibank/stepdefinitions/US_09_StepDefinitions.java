@@ -9,7 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.asserts.SoftAssert;
 
-public class US_09StepDefinitions {
+public class US_09_StepDefinitions {
 
     US_09_Page page = new US_09_Page();
     SoftAssert softAssert = new SoftAssert();

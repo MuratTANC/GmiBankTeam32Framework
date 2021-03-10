@@ -10,7 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 
-public class US10_StepDefinitions {
+public class US_10_StepDefinitions {
 
 
 

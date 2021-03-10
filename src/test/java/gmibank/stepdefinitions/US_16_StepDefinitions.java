@@ -11,7 +11,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
-public class US16_Stepdefinitions {
+public class US_16_StepDefinitions {
 
     US_09_Page page= new US_09_Page();
     US_16_page moneyPage= new US_16_page();
