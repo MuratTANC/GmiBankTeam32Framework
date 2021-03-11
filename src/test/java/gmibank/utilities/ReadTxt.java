@@ -3,7 +3,7 @@ package gmibank.utilities;
 
 import gmibank.pojos.Customer;
 import gmibank.pojos.States;
-import gmibank.utilities.ConfigurationReader;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;
