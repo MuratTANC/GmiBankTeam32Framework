@@ -247,7 +247,7 @@ public class PDFGenerator {
         pdfGeneratorRowsAndCellsWithList(header,list,fileName);
     }
 
-    public static void pdfGeneratorRowsAndCellsWithListFirstToFive(String header, List <Customer> list, String fileName){
+    public static void pdfteam32(String header, List <Customer> list, String fileName){
 
         Document document = new Document();
         String pdf_path = fileName;
