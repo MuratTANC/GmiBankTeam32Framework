@@ -42,23 +42,23 @@ public class ApiTest {
     public void read_all_customer_and_set_create_pojo_class() throws JsonProcessingException {
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Customer [] customer = objectMapper.readValue(response.asString(),Customer[].class);
+        Customer[] customer = objectMapper.readValue(response.asString(), Customer[].class);
         System.out.println(customer[0].getFirstName());
         System.out.println("=====================================================");
         System.out.println(customer[2].getAddress());
 
-        for(int i = 0 ; i < customer.length ; i++){
+        for (int i = 0; i < customer.length; i++) {
             System.out.println(customer[i].getFirstName());
         }
         System.out.println("=========================================================");
 
-        for(int i = 0 ; i < customer.length ; i++){
+        for (int i = 0; i < customer.length; i++) {
             System.out.println(customer[i].getAddress());
         }
         System.out.println("=========================================================");
 
 
-        for(int i = 0 ; i < customer.length ; i++) {
+        for (int i = 0; i < customer.length; i++) {
             if (customer[i].getUser() != null) {
                 System.out.println(customer[i].getAddress());
             }
@@ -70,23 +70,6 @@ public class ApiTest {
     public void validate_data() {
 
 
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

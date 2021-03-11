@@ -10,7 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
-public class US_003StepDefinitions{
+public class US_03_StepDefinitions {
     US_003Page us_003Page = new US_003Page();
 
     @When("kullanici gmibank_url adresine gider")
