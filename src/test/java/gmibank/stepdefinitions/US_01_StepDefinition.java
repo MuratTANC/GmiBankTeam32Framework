@@ -17,7 +17,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class Us_001_StepDefinition {
+public class US_01_StepDefinition {
     Us_001_Page us_001_page=new Us_001_Page();
     Faker faker = new Faker();
     String pasword=faker.internet().password();

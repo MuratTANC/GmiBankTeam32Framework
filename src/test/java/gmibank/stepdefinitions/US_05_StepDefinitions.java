@@ -7,7 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
-public class US_05StepDefinitions {
+public class US_05_StepDefinitions {
     US_05Pages us05Pages=new US_05Pages();
     US_04Pages us04Pages=new US_04Pages();
 

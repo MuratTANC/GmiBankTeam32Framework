@@ -14,6 +14,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,10 +23,8 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class US_20ApiTestStepDef {
-    List<Map<String, Object>> listOfCostumers;
-    HashMap<String, Object> putCostumer;
+
     Response response;
-    Customer expectedTestData = new Customer();
 
     @Given("kullanici api {string} gider")
     public void kullanici_api_gider(String end_point) {
@@ -38,21 +37,21 @@ public class US_20ApiTestStepDef {
                 .get(end_point)
                 .then()
                 .contentType(ContentType.JSON)
-              //  .statusCode(200)
+                .statusCode(200)
                 .extract()
                 .response();
 
-
-
         response.prettyPrint();
+
 
     }
 
     @Then("kullanici tum customer bilgilerini okur")
-    public void kullanici_tum_customer_bilgilerini_okur() throws JsonProcessingException {
+    public void kullanici_tum_customer_bilgilerini_okur() throws IOException{
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Customer [] customer = objectMapper.readValue(response.asString(),Customer[].class);
+        Customer[] customer= objectMapper.readValue(response.asString(),Customer[].class);
+       // System.out.println(customer[0].getFirstName());
 
     }
 
