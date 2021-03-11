@@ -170,23 +170,5 @@ public class WriteToTxt {
             writer.close();
         } catch (Exception e) {
         }
-
-
-
     }
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
