@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 package gmibank.pages;
 
 
@@ -16,4 +15,4 @@ public class GmiBankPage {
 
 
 }
->>>>>>> refs/remotes/origin/main
+
