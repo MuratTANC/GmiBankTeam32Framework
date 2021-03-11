@@ -49,6 +49,9 @@ public class US_29_StepDefinitions {
         String query2= ConfigurationReader.getProperty("sqlquery2");
         List<Object> listofCountry = DatabaseUtility.getRowList(query2);
         System.out.println(listofCountry.toString());
+        Assert.assertTrue(listofCountry.toString().contains(ConfigurationReader.getProperty("cid")));
+        Assert.assertTrue(listofCountry.toString().contains(ConfigurationReader.getProperty("cname")));
+
     }
 
     @Given("kullanici jdbc ile states veritabanına baglanır")
@@ -61,6 +64,9 @@ public class US_29_StepDefinitions {
         String query3= ConfigurationReader.getProperty("sqlquery3");
         List<Object> listofState = DatabaseUtility.getRowList(query3);
         System.out.println(listofState.toString());
+        Assert.assertTrue(listofState.toString().contains(ConfigurationReader.getProperty("sid")));
+        Assert.assertTrue(listofState.toString().contains(ConfigurationReader.getProperty("sname")));
+
     }
 
 

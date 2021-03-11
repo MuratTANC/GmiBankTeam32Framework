@@ -1,5 +1,9 @@
+
 package gmibank.utilities;
-import com.itextpdf.text.*;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -11,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PDFGenerator {
+
 
     public static void pdfGenerator(String header, String fileName){
 
@@ -28,16 +33,16 @@ public class PDFGenerator {
 
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(pdf_path));
 
-            document.open(); // once dosyanin acilmasi lazim
+            document.open();
 
-            document.add(new Paragraph(pdf_title));  // sonra basligin yerlestirilmesi
+            document.add(new Paragraph(pdf_title));
 
             PdfPTable table = new PdfPTable(headers.size());
 
-            table.setWidthPercentage(110);  // baslik ile pdf arasindaki mesafe
+            table.setWidthPercentage(110);
             table.setSpacingBefore(12);
             table.setSpacingAfter(12);
-            float [] colWidth = {2,2,2,2,2};  // sutun genisligi
+            float [] colWidth = {2,2,2,2,2};
             table.setWidths(colWidth);
 
             for (int i=0; i<headers.size();i++){
@@ -48,7 +53,7 @@ public class PDFGenerator {
 
 
 
-            document.add(table); // en son asamada table documentin icine atilacak
+            document.add(table);
 
             document.close();
 
@@ -63,12 +68,13 @@ public class PDFGenerator {
 
     }
 
+
     public static void pdfGeneratorRowsAndCells(String header, String fileName){
 
         Document document = new Document();
         String pdf_path =  fileName;
         String pdf_title = header;
-        //     String logo_path = "/Users/mk201/OneDrive/Desktop/logo.jpg";
+        //  String logo_path = "/Users/ibrahimkalin/Downloads/Techproed.jpg";
         List<String> headers = new ArrayList<String>();
         headers.add("Applicants");
         headers.add("SSNs");
@@ -83,7 +89,7 @@ public class PDFGenerator {
         rowData.add("USA");
         rowData.add("North Carolina");
         rowData.add("22180");
-        //   rowData.add("final");
+        rowData.add("final");
 
 
 
@@ -153,12 +159,14 @@ public class PDFGenerator {
 
     }
 
+
+
     public static void pdfGeneratorRowsAndCellsWithList(String header, List <Customer> list, String fileName){
 
         Document document = new Document();
         String pdf_path = fileName;
         String pdf_title = header;
-        //  String logo_path = "/Users/mk201/OneDrive/Desktop/logo.jpg";
+        //    String logo_path = "/Users/ibrahimkalin/Downloads/Techproed.jpg";
         List<String> headers = new ArrayList<String>();
         headers.add("Applicants");
         headers.add("SSNs");
@@ -174,7 +182,7 @@ public class PDFGenerator {
 
             document.open();
 
-            document.add(new Paragraph("                                            "+pdf_title));
+            document.add(new Paragraph("                                     "+pdf_title));
 
             PdfPTable table = new PdfPTable(5);
             table.setWidthPercentage(110);
@@ -199,13 +207,13 @@ public class PDFGenerator {
                 table.addCell(list.get(i).getFirstName());
                 table.addCell(list.get(i).getSsn());
                 table.addCell(list.get(i).getCountry().getName());
-                //    table.addCell(list.get(i).getState());
+             //   table.addCell(list.get(i).getState());
                 table.addCell(list.get(i).getZipCode());
 
             }
             document.add(table);
 
-            //       document.add(Image.getInstance(logo_path));
+            //    document.add(Image.getInstance(logo_path));
             document.close();
 
             writer.close();
@@ -221,32 +229,22 @@ public class PDFGenerator {
 
     public static void main(String[] args) {
 
-        //pdfGenerator("               pdf_ders","deneme.pdf");
-        //  pdfGeneratorRowsAndCells("pdf2","pdf_ders2.pdf");
-
-
-
-
         List <Customer> list = new ArrayList<>();
         Country country = new Country();
         country.setName("USA");
         Customer customer = new Customer();
         customer.setFirstName("Emine");
-        //  customer.setState("MA");
+      //  customer.setState();
         customer.setSsn("202020202");
         customer.setZipCode("02120");
         customer.setCountry(country);
 
         list.add(customer);
 
-        String header = "Information";
-        String fileName ="some.pdf";
+        String header = "All Applicants Information";
+        String fileName ="applicants.pdf";
 
         pdfGeneratorRowsAndCellsWithList(header,list,fileName);
-
-
-
-
     }
 
     public static void pdfGeneratorRowsAndCellsWithListFirstToFive(String header, List <Customer> list, String fileName){
@@ -278,6 +276,7 @@ public class PDFGenerator {
             table.setSpacingAfter(25);
             float [] colWidth = {2,2,2,2,2};
             table.setWidths(colWidth);
+
 
 
             for(int i=0;i<headers.size();i++) {
@@ -313,4 +312,7 @@ public class PDFGenerator {
 
     }
 
+
 }
+
+

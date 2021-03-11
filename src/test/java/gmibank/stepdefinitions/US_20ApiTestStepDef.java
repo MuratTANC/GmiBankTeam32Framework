@@ -12,6 +12,7 @@ import io.restassured.http.ContentType;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.Assert;
 
 
 import java.io.IOException;
@@ -25,6 +26,9 @@ import static io.restassured.RestAssured.given;
 public class US_20ApiTestStepDef {
 
     Response response;
+    JsonPath jsonPath;
+   // Customer[] customer;
+   // List<Integer> id=new ArrayList<>();
 
     @Given("kullanici api {string} gider")
     public void kullanici_api_gider(String end_point) {
@@ -48,11 +52,22 @@ public class US_20ApiTestStepDef {
 
     @Then("kullanici tum customer bilgilerini okur")
     public void kullanici_tum_customer_bilgilerini_okur() throws IOException{
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        Customer[] customer= objectMapper.readValue(response.asString(),Customer[].class);
-       // System.out.println(customer[0].getFirstName());
-
+        jsonPath=response.jsonPath();
+        String firstName=jsonPath.getString("firstName");
+        String lastName=jsonPath.getString("lastName");
+        String email=jsonPath.getString("email");
+        String mobilno=jsonPath.getString("mobilePhoneNumber");
+        String city=jsonPath.getString("city");
+        System.out.println(firstName);
+        System.out.println(lastName);
+        System.out.println(mobilno);
+        System.out.println(city);
+        System.out.println(email);
+        Assert.assertTrue(firstName.contains(ConfigurationReader.getProperty("us_20firstName")));
+        Assert.assertTrue(lastName.contains(ConfigurationReader.getProperty("us_20lastName")));
+        Assert.assertTrue(mobilno.contains(ConfigurationReader.getProperty("us_20mobilePhoneNumber")));
+        Assert.assertTrue(email.contains(ConfigurationReader.getProperty("us_20email")));
+        Assert.assertTrue(city.contains(ConfigurationReader.getProperty("us_20city")));
     }
 
     @Then("kullanici okudugu customerlerin verilerini validate yapar")
