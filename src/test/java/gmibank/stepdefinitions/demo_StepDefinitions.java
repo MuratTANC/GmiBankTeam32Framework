@@ -60,6 +60,7 @@ public class demo_StepDefinitions {
         ObjectMapper objectMapper = new ObjectMapper();
         country = objectMapper.readValue(response.asString(), Country[].class);
         System.out.println("ilk name okunuyor dikkat ");
+        System.out.println( "ilk name ");
 
 
         System.out.println(country[0].getName());
@@ -70,15 +71,22 @@ public class demo_StepDefinitions {
         for ( int i = 0; i< country.length ; i++)
         {
             idlistesi.add(country[i].getId());
-        System.out.println("id listesi :"+ country[i].getId());
+        System.out.println("id  :"+ country[i].getId());
         }
 
 
-        WriteToTxt.saveDataInFileWithid("countrylistesi.txt", country);
-        List<String> readId = ReadTxt.returnCustomerSNNList("countrylistesi.txt");
+        JsonPath jsonPath = response.jsonPath();
 
-        Assert.assertEquals("sorun var ",idlistesi,readId);
-        System.out.println("hersey basarili ");
+        String countryId = jsonPath.getString("id");
+
+        Assert.assertTrue("bulunamadi ", countryId.contains("74418"));
+
+
+        //    WriteToTxt.saveDataInFileWithid("id.txt", country);
+     //   List<String> readId = ReadTxt.returnCustomerSNNList("id.txt");
+
+     //   Assert.assertEquals("sorun var ",idlistesi,readId);
+       // System.out.println("hersey basarili ");
 
     }
     // Create Country
