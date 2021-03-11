@@ -53,7 +53,7 @@ public class US_18_StepDefinitions {
 
     @And("Click on registration_sign in  button")
     public void clickOnRegistration_signInButton() {
-      us_018_page.firstenterancebuttonu.click();
+        us_018_page.firstenterancebuttonu.click();
     }
 
     @When("Go to main page")
@@ -63,11 +63,12 @@ public class US_18_StepDefinitions {
 
     @Then("user should be able to click on edit button and user should be able to save changes")
     public void userShouldBeAbleToClickOnEditButtonAndUserShouldBeAbleToSaveChanges() {
-    Assert.assertTrue(us_018_page.editButton.isEnabled());
+        Assert.assertTrue(us_018_page.editButton.isEnabled());
     }
 
     @Then("user should be able to click on delete button and get warning message before deleting account")
     public void userShouldBeAbleToClickOnDeleteButtonAndGetWarningMessageBeforeDeletingAccount(int arg0) {
-
+        us_018_page.deleteButton.click();
+        Assert.assertTrue(us_018_page.deleteAlertText.isDisplayed());
     }
 }
