@@ -238,7 +238,7 @@ public class demo_StepDefinitions {
             Customers.add(customer);
         }
 
-        PDFGenerator.pdfGeneratorRowsAndCellsWithListFirstToFive("                    *** Team 32 PROJE SUNUMU*** \n                                                      === ilk datalar  ===",Customers,"     sunumDosyasi.pdf" );
+        PDFGenerator.pdfteam32("                    *** Team 32 PROJE SUNUMU*** \n                                                      === ilk datalar  ===",Customers,"     sunumDosyasi.pdf" );
 
 
 
