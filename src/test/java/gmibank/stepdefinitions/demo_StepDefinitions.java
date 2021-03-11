@@ -103,7 +103,7 @@ public class demo_StepDefinitions {
 
 
     }
-    //== Validate Created  Country Using Database
+    // Validate Created  Country and  Database
     @Given("creates a connection with db using {string} , {string} and {string}")
     public void creates_a_connection_with_db_using_and(String url, String user, String password) {
 
@@ -111,13 +111,29 @@ public class demo_StepDefinitions {
     }
 
     @Given("user provides the query {string} and {string}")
-    public void user_provides_the_query_and(String string, String string2) {
-
-    }
+    public void user_provides_the_query_and(String query, String column) {
+        List<Object> list = DatabaseUtility.getColumnData(query,column);
+        Country[]countries1 = new Country[list.size()];
+        for (int i=0; i<list.size()-1; i++){
+            Country country2  = new Country();
+            country2.setId(Integer.parseInt(list.get(i).toString().trim()));
+            dbCountry.add(country2);
+            // System.out.println(dbCountry.get(i).getId());
+    }}
 
     @Then("validate created country with {int}")
-    public void validate_created_country_with(Integer int1) {
+    public void validate_created_country_with(Integer id) {
+        List <Integer> createdIds = new ArrayList<>();
+        for(int i = 0 ; i<dbCountry.size();i++){
+            createdIds.add(dbCountry.get(i).getId());
+        }
 
+        System.out.println("=================================");
+        System.out.println();
+
+        Assert.assertTrue(createdIds.contains(id));
+
+        System.out.println("basardik ");
     }
 
     @Given("user updates a country using api end point {string}  {string} and its extension {string}")
