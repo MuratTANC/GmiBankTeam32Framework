@@ -11,6 +11,16 @@ public class States {
     public States() {
     }
 
+    @Override
+    public String toString() {
+        return "States{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tpcountry=" + tpcountry +
+                ", state='" + state + '\'' +
+                '}';
+    }
+
     public States(int id, String name, Country tpcountry, String state) {
         this.id = id;
         this.name = name;

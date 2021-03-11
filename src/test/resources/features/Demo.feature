@@ -1,19 +1,20 @@
-Feature: demo sunumu
-  Scenario:  Read ulke (country)
-    Given api end point "https://www.gmibank.com/api/tp-countries"
-    And validate eder
+@demo
+Feature: demo sunum :)
 
 
+  Scenario:ulke okuma
+    Given  api end point "https://www.gmibank.com/api/tp-countries"
+    And validate edelim
 
-  Scenario:  Create country
-    And demo user create a country using to api end point "https://www.gmibank.com/api/tp-countries"
+
+  Scenario: create country
+    And  create a country using to api end point "https://www.gmibank.com/api/tp-countries"
 
 
-
-  Scenario Outline:  read country data and validate created country using with id
-    Given demo user creates a connection with db using "jdbc:postgresql://157.230.48.97:5432/gmibank_db" , "techprodb_user" and "Techpro_@126"
-    And demo user provides the query "<query>" and "<columnName>"
-    Then demo validate created country with 64288
+  Scenario Outline:  read country and  validate created country using with id
+    Given  creates a connection with db using "jdbc:postgresql://157.230.48.97:5432/gmibank_db" , "techprodb_user" and "Techpro_@126"
+    And  user provides the query "<query>" and "<columnName>"
+    Then  validate created country with 64272
 
     Examples: demo read the data
       |query|columnName|
@@ -21,28 +22,23 @@ Feature: demo sunumu
 
 
 
-  @
-
-
-
-
-
-  Scenario Outline: Update country
-    And update a country using api end point "https://www.gmibank.com/api/tp-countries"  "<name>" and  "<id>"
+  Scenario Outline: demo Update country
+    And  user updates a country using api end point "https://www.gmibank.com/api/tp-countries"  "<name>" and its extension "<id>"
 
     Examples: Update country
       |name|id|
-      |kore|73012|
+      |cennet |25589|
 
-  Scenario Outline: Delete country
-    Given  country using endpoint "<endPoint>"  "<id>"
+
+  Scenario Outline:  Delete countries
+    Given user deletes a country using endpoint "<endPoint>" and its extension "<id>"
     Examples: Delete Country
       |endPoint                                |id    |
-      |https://www.gmibank.com/api/tp-countries|/73012|
+      |https://www.gmibank.com/api/tp-countries|/73028|
 
 
-
-  Scenario Outline: read  ilkcustomerler c data
+  @pdf
+  Scenario Outline: bazi datalar customer data
     Given demo pdf user creates a connection with db using "jdbc:postgresql://157.230.48.97:5432/gmibank_db" , "techprodb_user" and "Techpro_@126"
     And demo pdf user provides the query "<query>"
 
