@@ -2,7 +2,7 @@
 Feature: demo sunum :)
 
 
-  Scenario:ulke okuma
+  Scenario:ulke  okuma ve id siralama
     Given  api end point "https://www.gmibank.com/api/tp-countries"
     And validate edelim
 

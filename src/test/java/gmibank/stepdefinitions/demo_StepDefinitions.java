@@ -47,7 +47,7 @@ public class demo_StepDefinitions {
                 .extract()
                 .response();
 
-        // response.prettyPrint();
+         response.prettyPrint();
 
 
 
@@ -126,20 +126,20 @@ public class demo_StepDefinitions {
             Country country2  = new Country();
             country2.setId(Integer.parseInt(list.get(i).toString().trim()));
             dbCountry.add(country2);
-            // System.out.println(dbCountry.get(i).getId());
+             System.out.println(dbCountry.get(i).getId());
     }}
 
     @Then("validate created country with {int}")
     public void validate_created_country_with(Integer id) {
-        List <Integer> createdIds = new ArrayList<>();
+        List <Integer> database = new ArrayList<>();
         for(int i = 0 ; i<dbCountry.size();i++){
-            createdIds.add(dbCountry.get(i).getId());
+            database.add(dbCountry.get(i).getId());
         }
 
         System.out.println("=================================");
         System.out.println();
 
-        Assert.assertTrue(createdIds.contains(id));
+        Assert.assertTrue(database.contains(id));
 
         System.out.println("basardik ");
     }
