@@ -1,5 +1,5 @@
 package gmibank.utilities;
-/*
+
 import gmibank.pojos.Customer;
 import gmibank.pojos.States;
 
@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadTxt {
+public class ReadText {
 
     public static List<Customer> returnCustomer(String filePath){
         List<Customer>all = new ArrayList<>();
@@ -181,4 +181,4 @@ public class ReadTxt {
     }
 
 }
-*/
+

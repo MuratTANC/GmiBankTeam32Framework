@@ -19,7 +19,7 @@ public class Customer {
     private String createDate;
     private boolean zelleEnrolled;
     private Country country;
-    private States state;
+    private String state;
     private User user;
     private Accounts accounts;
 
@@ -135,11 +135,11 @@ public class Customer {
         this.country = country;
     }
 
-    public States getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(States state) {
+    public void setState(String state) {
         this.state = state;
     }
 
