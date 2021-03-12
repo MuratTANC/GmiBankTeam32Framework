@@ -2,16 +2,16 @@
 Feature: demo sunum :)
 
 
-  Scenario:ulke okuma
+  Scenario:ulke  okuma ve id siralama
     Given  api end point "https://www.gmibank.com/api/tp-countries"
     And validate edelim
 
 
-  Scenario: create country
+  Scenario: yeni ulke olusturma
     And  create a country using to api end point "https://www.gmibank.com/api/tp-countries"
 
 
-  Scenario Outline:  read country and  validate created country using with id
+  Scenario Outline: database baglanma  ve validate etme
     Given  creates a connection with db using "jdbc:postgresql://157.230.48.97:5432/gmibank_db" , "techprodb_user" and "Techpro_@126"
     And  user provides the query "<query>" and "<columnName>"
     Then  validate created country with 64272
@@ -22,7 +22,7 @@ Feature: demo sunum :)
 
 
 
-  Scenario Outline: demo Update country
+  Scenario Outline:  ulkeyi update etme
     And  user updates a country using api end point "https://www.gmibank.com/api/tp-countries"  "<name>" and its extension "<id>"
 
     Examples: Update country
@@ -30,7 +30,7 @@ Feature: demo sunum :)
       |cennet |25589|
 
 
-  Scenario Outline:  Delete countries
+  Scenario Outline: ulke silme
     Given user deletes a country using endpoint "<endPoint>" and its extension "<id>"
     Examples: Delete Country
       |endPoint                                |id    |
@@ -38,7 +38,7 @@ Feature: demo sunum :)
 
 
   @pdf
-  Scenario Outline: bazi datalar customer data
+  Scenario Outline: pdf alma :)
     Given demo pdf user creates a connection with db using "jdbc:postgresql://157.230.48.97:5432/gmibank_db" , "techprodb_user" and "Techpro_@126"
     And demo pdf user provides the query "<query>"
 
