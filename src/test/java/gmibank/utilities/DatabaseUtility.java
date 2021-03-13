@@ -1,4 +1,5 @@
 package gmibank.utilities;
+
 import gmibank.pojos.Country;
 import gmibank.pojos.Customer;
 
@@ -17,8 +18,6 @@ public class DatabaseUtility {
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
-
-
 
     public static void createConnection() {
         String url = "jdbc:postgresql://157.230.48.97:5432/gmibank_db";
@@ -72,9 +71,8 @@ public class DatabaseUtility {
      *         be returned. The rest of the data will be ignored
      */
     public static Object getCellValue(String query , int column , int row) {
-        return getQueryResultList(query).get(column).get(row);
+        return getQueryResultList(query).get(row).get(column);
     }
-
 
     public static List<Object> getRowList(String query) {
         return getQueryResultList(query).get(0);
@@ -224,7 +222,6 @@ public class DatabaseUtility {
         }
     }
 
-
     public static int getMaxCountryId (String query,String column){
         int max = 0;
         List<Object> allIds = getColumnData(query, column);
@@ -264,14 +261,13 @@ public class DatabaseUtility {
             customer.setFirstName(list.get(i).get(1).toString());
             customer.setSsn(list.get(i).get(10).toString());
             country.setName(list.get(i).get(8).toString());
-            customer.setState(list.get(i).get(14).toString());
+            //    customer.setState(list.get(i).get(14).toString());
             customer.setZipCode(list.get(i).get(15).toString());
             customer.setCountry(country);
             listOfCustomers.add(customer);
         }
 
-        //PDFGenerator.pdfGeneratorRowsAndCellsWithList("All Customers!",listOfCustomers,"AllApplicants.pdf" );
+        //    PDFGenerator.pdfGeneratorRowsAndCellsWithList("All Customers!",listOfCustomers,"AllApplicants.pdf" );
 
     }
-
 }

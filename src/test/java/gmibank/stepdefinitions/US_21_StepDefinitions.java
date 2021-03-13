@@ -18,7 +18,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.*;
 
-public class US_21_StepDefinitionsApi {
+public class US_21_StepDefinitions {
 
     Response response;
     JsonPath jsonPath;

@@ -10,6 +10,53 @@ public class Customer {
     private String lastName;
     private String middleInitial;
     private String email;
+
+    public Customer() {
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleInitial='" + middleInitial + '\'' +
+                ", email='" + email + '\'' +
+                ", mobilePhoneNumber='" + mobilePhoneNumber + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", ssn='" + ssn + '\'' +
+                ", createDate='" + createDate + '\'' +
+                ", zelleEnrolled=" + zelleEnrolled +
+                ", country=" + country +
+                ", state=" + state +
+                ", user=" + user +
+                ", accounts=" + accounts +
+                '}';
+    }
+
+    public Customer(int id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, String ssn, String createDate, boolean zelleEnrolled, Country country, States state, User user, Accounts accounts) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleInitial = middleInitial;
+        this.email = email;
+        this.mobilePhoneNumber = mobilePhoneNumber;
+        this.phoneNumber = phoneNumber;
+        this.zipCode = zipCode;
+        this.address = address;
+        this.city = city;
+        this.ssn = ssn;
+        this.createDate = createDate;
+        this.zelleEnrolled = zelleEnrolled;
+        this.country = country;
+        this.state = state;
+        this.user = user;
+        this.accounts = accounts;
+    }
+
     private String mobilePhoneNumber;
     private String phoneNumber;
     private String zipCode;
@@ -19,7 +66,7 @@ public class Customer {
     private String createDate;
     private boolean zelleEnrolled;
     private Country country;
-    private String state;
+    private States state;
     private User user;
     private Accounts accounts;
 
@@ -135,11 +182,11 @@ public class Customer {
         this.country = country;
     }
 
-    public String getState() {
+    public States getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(States state) {
         this.state = state;
     }
 

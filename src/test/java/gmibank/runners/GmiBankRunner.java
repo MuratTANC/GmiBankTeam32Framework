@@ -1,7 +1,6 @@
 
 
 
-
 package gmibank.runners;
 
 import io.cucumber.junit.Cucumber;
@@ -20,14 +19,12 @@ import org.junit.runner.RunWith;
 
 
 
-        tags = "@Api",
+        tags = "@infovalid",
 
-        dryRun = false
+        dryRun =true
 
 
 )
 public class GmiBankRunner {
 }
-
-
 

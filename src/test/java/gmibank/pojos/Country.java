@@ -4,12 +4,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Country {
-    /*  "id": 22326,
-        "name": "Sudan",
-        "states": null
 
-                 */
     private int id;
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", states='" + states + '\'' +
+                '}';
+    }
+
     private String name;
     private String states;
 
@@ -24,8 +30,17 @@ public class Country {
         this.id = id;
     }
 
+    public Country() {
+    }
+
     public String getName() {
         return name;
+    }
+
+    public Country(int id, String name, String states) {
+        this.id = id;
+        this.name = name;
+        this.states = states;
     }
 
     public void setName(String name) {
