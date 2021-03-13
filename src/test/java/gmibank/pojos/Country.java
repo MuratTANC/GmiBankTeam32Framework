@@ -19,9 +19,12 @@ public class Country {
     private String name;
     private String states;
 
+
     public int getId() {
         return id;
     }
+
+
 
     public void setId(int id) {
         this.id = id;
@@ -51,4 +54,6 @@ public class Country {
     public void setStates(String states) {
         this.states = states;
     }
+
+
 }

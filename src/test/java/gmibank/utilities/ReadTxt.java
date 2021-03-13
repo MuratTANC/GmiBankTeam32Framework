@@ -1,4 +1,6 @@
 
+
+
 package gmibank.utilities;
 
 import gmibank.pojos.Customer;
@@ -161,5 +163,6 @@ public class ReadTxt {
     }
 
 }
+
 
 
