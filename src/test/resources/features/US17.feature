@@ -17,6 +17,14 @@ Feature: US_17 System should allow the Admin to manage users
       |ROLE_USER|
       |ROLE_EMPLOYEE|
       |ROLE_MANAGER |
-      |ROLE_CUSTOMER|
       |ROLE_ADMIN   |
+
+Scenario:TC_02
+  Then user view sekmesine tiklar
+  And islemi dogrular
+
+  Scenario: TC_03
+    Then user delete sekmesine tiklar
+    And islemin testini dogrular
+
 

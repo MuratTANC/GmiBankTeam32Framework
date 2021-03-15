@@ -17,8 +17,11 @@ public class US_17Page {
     @FindBy(xpath = "//a[@id='login-item']")
     public WebElement signInEnterens;
 
+   @FindBy(xpath = "//li[@id='account-menu']")
+   public WebElement account;
 
-
+   @FindBy(xpath = "(//a[@class='dropdown-item'])[10]")
+  public WebElement signOut;
     @FindBy(xpath = "//input[@name='username']")
     public WebElement username_Alani;
 
@@ -36,11 +39,11 @@ public class US_17Page {
     @FindBy(xpath = "//span[text()='User management']")
     public WebElement userManagementButton ;
 
-    //@FindBy(xpath = "(//table//tbody//tr[2]//td[10]//span[@class='d-none d-md-inline'])[2]")
-    //public WebElement editButonu;
+    @FindBy(xpath = "(//table//tbody//tr[2]//td[10]//span[@class='d-none d-md-inline'])[2]")
+    public WebElement editButonu;
 
-    @FindBy(xpath = "//span[text()='Edit'])[1]")
-    public  WebElement editButonu;
+    //@FindBy(xpath = "//span[text()='Edit'])[1]")
+    //public  WebElement editButonu;
 
     @FindBy(xpath = "//span[text()='Create or edit a user']")
     public WebElement editText;
@@ -63,7 +66,7 @@ public class US_17Page {
     @FindBy(xpath="(//table//tbody//tr[2]//td[10]//span[@class='d-none d-md-inline'])[3]")
     public WebElement delete;
 
-    @FindBy (xpath = "(//button[@class='btn btn-danger'])[3]")
+    @FindBy (xpath = "(//button[@class='btn btn-danger'])[7]")
     public WebElement deleteTextBox;
 
     @FindBy(xpath = "//div[@class='Toastify__toast-body']")
