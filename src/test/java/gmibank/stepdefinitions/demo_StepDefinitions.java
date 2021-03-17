@@ -47,7 +47,7 @@ public class demo_StepDefinitions {
                 .extract()
                 .response();
 
-        // response.prettyPrint();
+         response.prettyPrint();
 
 
 
@@ -60,6 +60,7 @@ public class demo_StepDefinitions {
         ObjectMapper objectMapper = new ObjectMapper();
         country = objectMapper.readValue(response.asString(), Country[].class);
         System.out.println("ilk name okunuyor dikkat ");
+        System.out.println( "ilk name ");
 
 
         System.out.println(country[0].getName());
@@ -70,15 +71,22 @@ public class demo_StepDefinitions {
         for ( int i = 0; i< country.length ; i++)
         {
             idlistesi.add(country[i].getId());
-        System.out.println("id listesi :"+ country[i].getId());
+        System.out.println("id  :"+ country[i].getId());
         }
 
 
-        WriteToTxt.saveDataInFileWithid("countrylistesi.txt", country);
-        List<String> readId = ReadTxt.returnCustomerSNNList("countrylistesi.txt");
+        JsonPath jsonPath = response.jsonPath();
 
-        Assert.assertEquals("sorun var ",idlistesi,readId);
-        System.out.println("hersey basarili ");
+        String countryId = jsonPath.getString("id");
+
+        Assert.assertTrue("bulunamadi ", countryId.contains("74418"));
+
+
+        //    WriteToTxt.saveDataInFileWithid("id.txt", country);
+     //   List<String> readId = ReadTxt.returnCustomerSNNList("id.txt");
+
+     //   Assert.assertEquals("sorun var ",idlistesi,readId);
+       // System.out.println("hersey basarili ");
 
     }
     // Create Country
@@ -118,20 +126,20 @@ public class demo_StepDefinitions {
             Country country2  = new Country();
             country2.setId(Integer.parseInt(list.get(i).toString().trim()));
             dbCountry.add(country2);
-            // System.out.println(dbCountry.get(i).getId());
+             System.out.println(dbCountry.get(i).getId());
     }}
 
     @Then("validate created country with {int}")
     public void validate_created_country_with(Integer id) {
-        List <Integer> createdIds = new ArrayList<>();
+        List <Integer> database = new ArrayList<>();
         for(int i = 0 ; i<dbCountry.size();i++){
-            createdIds.add(dbCountry.get(i).getId());
+            database.add(dbCountry.get(i).getId());
         }
 
         System.out.println("=================================");
         System.out.println();
 
-        Assert.assertTrue(createdIds.contains(id));
+        Assert.assertTrue(database.contains(id));
 
         System.out.println("basardik ");
     }
@@ -230,7 +238,7 @@ public class demo_StepDefinitions {
             Customers.add(customer);
         }
 
-        PDFGenerator.pdfGeneratorRowsAndCellsWithListFirstToFive("                    *** Team 32 PROJE SUNUMU*** \n                                                      === ilk datalar  ===",Customers,"     sunumDosyasi.pdf" );
+        PDFGenerator.pdfteam32("                    *** Team 32 PROJE SUNUMU*** \n                                                      === ilk datalar  ===",Customers,"     sunumDosyasi.pdf" );
 
 
 

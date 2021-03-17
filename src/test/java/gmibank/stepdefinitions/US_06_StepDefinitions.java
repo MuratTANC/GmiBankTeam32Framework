@@ -79,6 +79,8 @@ public class US_06_StepDefinitions {
     }
 
 
+
+
     @And("Email textboxinindaki emailin newuser{int}@new.com   oldugunu dogrulayiniz")
     public void emailTextboxinindakiEmailinNewuserNewComOldugunuDogrulayiniz(int arg0) {
         Assert.assertFalse(us_06_page.email.getText().contains(ConfigurationReader.getProperty("email_dogrulama")));
@@ -159,5 +161,6 @@ public class US_06_StepDefinitions {
     public void kullanici_gmibank_sayfasini_kapatir() {
         Driver.closeDriver();
     }
+
 
 }
