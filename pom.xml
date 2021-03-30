@@ -64,7 +64,7 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>6.9.1</version>
+            <version>6.9.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -138,8 +138,6 @@
             <artifactId>jackson-core-asl</artifactId>
             <version>1.9.13</version>
         </dependency>
-
-
 
     </dependencies>
 

@@ -22,104 +22,48 @@ import static io.restassured.RestAssured.given;
 
 
 public class US_27_StepDefinitions {
-
     Response response;
-    Customer[] customers;
-    Response responseAll;
-    States[] states;
-    ObjectMapper objectMapper = new ObjectMapper();
-    Response  responsedelete;
-    States[]  statedeleted;
-    List<String> list;
     JsonPath jsonPath;
 
-
-
-    @Given("user should create a state data from {string}")
-    public void userShouldCreateAStateDataFrom(String url) {
+    @Given("GMI4 user should be reads all states data from {string}")
+    public void gmi4_user_should_be_reads_all_states_data_from(String states_url1) {
         response = given().headers(
                 "Authorization",
-                "Bearer " + ConfigurationReader.getProperty("tokenf"),
+                "Bearer " + ConfigurationReader.getProperty("token"),
                 "Content-Type",
                 ContentType.JSON,
                 "Accept",
                 ContentType.JSON)
                 .when()
-                .body(StateJson.CREATE_STATE3)
-                .post(url)
+                .get(states_url1)
                 .then()
                 .contentType(ContentType.JSON)
+                .statusCode(200)
                 .extract()
                 .response();
         response.prettyPrint();
 
 
 
-
-
     }
 
 
-
-     @Then("user should create a state with  {string} and {string}")
-     public void userShouldCreateAStateWithAnd(String ar, String arg1) {
-
-
-
-     }
-
-    @Given("user should be reads all states data from {string}")
-    public void userShouldBeReadsAllStatesDataFrom(String arg0) {
-
-
-
-
-
-
-
-    }
-
-    @And("user should be delete a state with {string} and verify")
-    public void userShouldBeDeleteAStateWithAndVerify(String id) {
-     String url="https://www.gmibank.com/api/tp-states";
-
-     /* response = given().headers(
+    @Given("GMI4 user should be deleted a state using endpoint {string} and its extension {string}")
+    public void gmi4_user_should_be_deleted_a_state_using_endpoint_and_its_extension(String URL, String ID) {
+        response = given().headers(
                 "Authorization",
-                "Bearer " + ConfigurationReader.getProperty("tokenf"),
+                "Bearer " + ConfigurationReader.getProperty("token"),
                 "Content-Type",
                 ContentType.JSON,
                 "Accept",
                 ContentType.JSON)
                 .when()
-                .delete(url+ id)
-                .then()
-                .extract()
-                .response();*/
-
-
-
-        response = given().headers(
-                "Authorization",
-                "Bearer " + ConfigurationReader.getProperty("tokenf"),
-                "Content-Type",
-                ContentType.JSON,
-                "Accept",
-                ContentType.JSON)
-                .when().body(StateJson.CREATE_STATE2)
-                .delete(url+id)
+                .delete(URL+ID)
                 .then()
                 .extract()
                 .response();
 
-
-
-
-
-
-    jsonPath= response.jsonPath();
-   String stateId= jsonPath.getString("id");
-       Assert.assertFalse("state silinmedi ",stateId.contains("73007"));
-       System.out.println("silindi gozunaydin");
-
+        response.prettyPrint();
     }
+
 }

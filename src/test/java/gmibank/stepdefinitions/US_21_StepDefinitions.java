@@ -24,7 +24,7 @@ public class US_21_StepDefinitions {
     JsonPath jsonPath;
     Country[] countries;
 
-    @Given("In countries user sets all response using end point {string}")
+    @Given("gmi4 In countries user sets all response using end point {string}")
     public void in_countries_user_sets_all_response_using_end_point(String api_end_point) {
 
         response = given().headers(
@@ -45,7 +45,7 @@ public class US_21_StepDefinitions {
     }
     List<Integer> id=new ArrayList<>();
 
-    @Given("In countries user deserialization data json to java pojo")
+    @Given("gmi4 In countries user deserialization data json to java pojo")
     public void in_countries_user_deserialization_data_json_to_java_pojo() throws JsonProcessingException {
         jsonPath=response.jsonPath();
         ObjectMapper objectMapper=new ObjectMapper();
@@ -68,7 +68,7 @@ public class US_21_StepDefinitions {
 
     }
 
-    @Given("In countries user validates data.")
+    @Given("gmi4 In countries user validates data.")
     public void in_countries_user_validates_data() {
 
         //countries icindeki id value larini list halinde return eder ve verify yapar
